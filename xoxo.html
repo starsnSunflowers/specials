@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> hey M!!! I Miss You 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #FFC0CB, #D8BFD8, #FFF5E1, #B0E0E6);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff69b4;
+        }
+        .gif-container img {
+            width: 150px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .reveal-button {
+            background: #ffb6c1;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .reveal-button:hover {
+            background: #ff69b4;
+            color: white;
+        }
+        #number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4500;
+            margin-top: 20px;
+            display: none;
+        }
+        .image-reveal {
+            display: none;
+            margin-top: 20px;
+        }
+        .image-reveal img {
+            width: 200px;
+            border-radius: 15px;
+        }
+        .music-button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            background: #ffb6c1;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .music-button:hover {
+            background: #ff69b4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="Sweet_-_Cigarettes_After_Sex.mp3" type="audio/mp3">
+    </audio>
+    
+    <button class="music-button" onclick="toggleMusic()">Play Music 🎵</button>
+    
+    <h1>Hey M,
+     I've been away (not vanishing on you, I swear!), and it's been driving me crazy not being able to talk to you… 
+     I miss you more than words can say💖💖</h1>
+    <p>I miss our conversations and just being around you,so I'm here to remind you that 
+        you're special and you make my days lighter and brighter.
+        If I could, I'd send you a letter the old-school way, but logistics aren’t on my side.
+         So, here's a little something digital to remind you that you're always on my mind. 💕
+         Also happy Valentines love 💕
+                                        Yours Truly
+                                           ~N</p>
+    
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/gl8ymnpv4Sqha/giphy.gif" alt="Cat">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Puppy">
+        <img src="https://media.giphy.com/media/x9MA8tlvFL1q1R25Kj/giphy.gif?cid=ecf05e477fbdaanuh7e5xi8hq41sy51y18hnrjk26wd3y7ml&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Hug">
+        <img src="https://media.giphy.com/media/X4M6homF66qFq/giphy.gif?cid=ecf05e47bims0wmm30ow22bl9h54zkxavp0wldbuq21yj980&ep=v1_gifs_related&rid=giphy.gif&ct=g" alt="Sunflowers">
+        <img src="https://media.giphy.com/media/vl6pBL9raJZm3odCRS/giphy.gif?cid=ecf05e47d36wsxszziiajzo527pnsq0x173m700ylnvh14im&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Kittens">
+    </div>
+    
+    <div class="button-container">
+        <p>Click!!Click!!Click!!! 💌</p>
+        <script>
+            function reveal(button) {
+                document.getElementById('number').style.display = 'none';
+                document.getElementById('imageContainer').style.display = 'none';
+                
+                if (button.dataset.correct) {
+                    document.getElementById('number').style.display = 'block';
+                } else {
+                    let imgSrc = button.dataset.img;
+                    document.getElementById('imageDisplay').src = imgSrc;
+                    document.getElementById('imageContainer').style.display = 'block';
+                }
+            }
+
+            function toggleMusic() {
+                let music = document.getElementById('bg-music');
+                let button = document.querySelector('.music-button');
+                if (music.paused) {
+                    music.play();
+                    button.textContent = 'Pause Music ⏸️';
+                } else {
+                    music.pause();
+                    button.textContent = 'Play Music 🎵';
+                }
+            }
+        </script>
+        
+        <div>
+            <button class="reveal-button" onclick="reveal(this)" data-img="https://media0.giphy.com/media/tMf9OezQLRxRu/giphy.gif">🌻</button>
+            <button class="reveal-button" onclick="reveal(this)" data-img="https://media.giphy.com/media/1UX4A4e47m3hDkpGtJ/giphy.gif">🐱</button>
+            <button class="reveal-button" onclick="reveal(this)" data-img="https://media.giphy.com/media/JpKv5m3OfJRtu/giphy.gif">🐶</button>
+            <button class="reveal-button" onclick="reveal(this)" data-img="https://media.giphy.com/media/3o7TKPb6ChoNg61IQw/giphy.gif">💕</button>
+            <button class="reveal-button" onclick="reveal(this)" data-correct="true">💌</button>
+        </div>
+    </div>
+    
+    <p id="number">9021987162💕
+          (for 'just in case' purposes)</p>
+    
+    <div id="imageContainer" class="image-reveal">
+        <img id="imageDisplay" src="" alt="Cute surprise">
+    </div>
+</body>
+</html>
